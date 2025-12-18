@@ -98,11 +98,11 @@
     }
     if (errorMsg !== null) {
         Swal.fire({
-            icon: 'success',
-            title: 'Success!',
-            text: successMsg,
+            icon: 'error',
+            title: 'Login Failed',
+            text: errorMsg,
             customClass: {
-                popup: 'swal-popup-height2'
+                popup: 'swal-popup-height'
             }
         });
 

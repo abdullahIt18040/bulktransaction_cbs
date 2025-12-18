@@ -7,10 +7,10 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@Table(name = "users")
+@Table(name = "USERSBULK")
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class UserBulk {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +22,7 @@ public class User {
     @Column(nullable = false)
     private String password;
 
-    public User(String username, String password) {
+    public UserBulk(String username, String password) {
         this.username = username;
         this.password = password;
     }

@@ -2,12 +2,10 @@ package com.sil.bulktranactionloginapp.controlles;
 
 
 import com.sil.bulktranactionloginapp.dto.LoginRequest;
-import com.sil.bulktranactionloginapp.entities.User;
+import com.sil.bulktranactionloginapp.entities.UserBulk;
 import com.sil.bulktranactionloginapp.services.UserService;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.webmvc.error.ErrorController;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -47,7 +45,7 @@ public class UserController {
             return "redirect:/login2";
         }
 
-        User user = userService.login(loginRequest.getEmail(), loginRequest.getPassword());
+        UserBulk user = userService.login(loginRequest.getEmail(), loginRequest.getPassword());
 
         if (user == null) {
             redirectAttributes.addFlashAttribute("errorMessage", "Invalid email or password!");
